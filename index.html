@@ -39,16 +39,13 @@
 				<section>
                                         <div class="ghost"><span>this is my ghost ...</span></div>
                                         <div class="headline"><span>reveal.js is a framework for easily creating beautiful presentations using HTML this is my headline ...</span></div>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<h3>Insert Chart Title</h3>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto;"></div>
 <div class="footer"><small>
 <div class="title">This is a witty title</div>
 <div class="date">February 6, 2014</div>
 </small></div>
-<div class="page"><small>1</small></div>
+<div id="slide-number" class="slide-number">1</div>
 				</section>
 
 				<section>
@@ -390,11 +387,37 @@ function linkify( selector ) {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/highcharts/standalone-framework.src.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/highcharts/highcharts.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'revenue.js', async: true, condition: function() { return !!document.body.classList; } }
+
 				]
 			});
 
 		</script>
+<script>
+   function currentSlideNumber(event) {
+    var formattedStr;
+    if (event.indexh === 0) {
+     return '';
+    }
+    formattedStr = event.indexh;
+    if (event.indexv) {
+     formattedStr += '/' + event.indexv;
+    }
+    return formattedStr;
+   }
+   // fires on slide change
+   Reveal.addEventListener('slidechanged', function(event) {
+    document.querySelector('.slide-number').innerText = currentSlideNumber(event);
+   });
+   //
+   //var slideNumberDiv = document.createElement('div');
+   ////slideNumberDiv.classList.add('slide-number');
+   //document.querySelector('.controls').appendChild(slideNumberDiv);
+
+  </script>
 
 	</body>
 </html>
