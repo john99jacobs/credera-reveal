@@ -32,7 +32,7 @@
 $mainColor: #333;
 $headingColor: #333;
 $headingTextShadow: none;
-$backgroundColor: #eeece1;
+$backgroundColor: white;
 $linkColor: #8b743d;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(79, 64, 28, 0.99);
@@ -48,3 +48,79 @@ $heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b
 // Theme template ------------------------------
 @import "../template/theme";
 // ---------------------------------------------
+
+/*********************************************
+ * GHOST
+ *********************************************/
+.reveal .ghost {
+  color: black;
+  background: url('../../images/ghost.png') top left;
+  height:55px;
+  line-height:55px;
+  font-size: .75em;
+  padding: 0 50px;
+  text-align: left;
+}
+
+.reveal .ghost span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*********************************************
+ * HEADLINE
+ *********************************************/
+.reveal .headline {
+  color: black;
+  background: #EDEBE1;
+  height:130px;
+  line-height:130px;
+  padding: 0 50px;
+  text-align: left;
+}
+
+.reveal .subhead {
+  color: black;
+  background: white;
+  height:71px;
+  line-height:71px;
+  padding: 0 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.reveal .headline span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+}
+
+.reveal .page {
+  position:absolute;
+  bottom: 0;
+  right: 75px;
+  color: #898989;
+  padding: 25px 20px;
+  text-align: left;
+  margin: 0 0 50px 0;
+}
+
+.reveal .footer {
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  color: #898989;
+  padding: 25px 20px;
+  border-color: #c4bd97;
+  border-style: solid;
+  border-width: 0 2px 0 0;
+  text-align: right;
+  margin: 0 75px 50px 0;
+}
+
+.reveal .slides>section {
+  padding: 0;
+  height: 100%;
+  background: url('../../images/credera_logo.png') no-repeat bottom left;
+  background-size:200px;
+}
